@@ -1,0 +1,14 @@
+import numpy as np
+import cv2
+
+image = cv2.imread("gandalf.png")
+cv2.imshow("Original", image)
+
+
+M = np.ones(image.shape, dtype = "uint8") * 100
+added = cv2.add(image, M)
+cv2.imshow("Added", added)
+M = np.ones(image.shape, dtype = "uint8") * 50
+subtracted = cv2.subtract(image, M)
+cv2.imshow("Subtracted", subtracted)
+cv2.waitKey(0)

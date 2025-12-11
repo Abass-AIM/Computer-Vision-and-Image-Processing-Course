@@ -1,0 +1,13 @@
+import numpy as np
+import cv2
+from matplotlib import pyplot as plt
+
+image = cv2.imread("parcel.jpeg")
+
+image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+
+eq = cv2.equalizeHist(image)
+
+cv2.imshow("Histogram Equalization", np.hstack([image, eq]))
+
+cv2.waitKey(0)
